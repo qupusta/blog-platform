@@ -12,7 +12,6 @@ export const getRegistrationService = ({ username, email, password }) => {
       "password": password,
     },
   }
-  console.log(JSON.stringify(userData))
 
   return postRequest(`${_apiBase}users`, JSON.stringify(userData))
 }
@@ -43,7 +42,6 @@ export const changeUserDataService = (body, token) => {
     Authorization: `Token ${token}`,
   }
   const { email, username, password, image } = body
-  console.log(email, username, password, image)
 
   const fullBody = {
     "user": {
@@ -53,7 +51,6 @@ export const changeUserDataService = (body, token) => {
       "image": image
     }
   }
-  console.log(fullBody)
 
   return postRequest(`${_apiBase}user`, JSON.stringify(fullBody), headers, 'PUT')
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -15,6 +15,8 @@ const SignUpPage = () => {
   const onSuccessReg = useSelector((state) => state.user.SuccessReg)
   const [doubleControl, setDControl] = useState(true)
 
+  const navigate = useNavigate()
+
   const {
     register,
     formState: { errors },
@@ -24,7 +26,6 @@ const SignUpPage = () => {
   const onSubmit = (data) => {
     if (doubleControl) {
       setDControl(false)
-      console.log(data)
       getRegistrationService(data)
         .then((res) => {
           if (res.errors) {
@@ -36,6 +37,7 @@ const SignUpPage = () => {
               dispatch(userActions.changeRegStatus(false))
               dispatch(userActions.successRegistration(true))
               setDControl(true)
+              navigate('/sign-in')
             }, 2500)
           }
         })
@@ -47,8 +49,7 @@ const SignUpPage = () => {
   }
 
   if (onSuccessReg) {
-    setTimeout(() => dispatch(userActions.successRegistration(false)), 500)
-    return <Navigate replace to="/sign-in" />
+    dispatch(userActions.successRegistration(false))
   }
 
   const errorInputClass = `${classes.input} ${classes.errorInput}`
