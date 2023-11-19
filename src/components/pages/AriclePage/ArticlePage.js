@@ -6,8 +6,7 @@ import format from 'date-fns/format'
 import { useParams, Link, Navigate } from 'react-router-dom'
 
 import articleActions from '../../../reducers/ArticlesReducer/ArticlesActions'
-import userActions from '../../../reducers/UserReducer/UserActions'
-import { editArticleService, getArticleService } from '../../../service/ArticlesService'
+import { getArticleService } from '../../../service/ArticlesService'
 import Spinner from '../../Spinner/Spinner'
 import ErrorIndicator from '../../ErrorIndicator/ErrorIndicator'
 import Tags from '../../Tags/Tags'
@@ -22,10 +21,11 @@ const ArticlePage = () => {
   const onLoad = useSelector((state) => state.article.onLoad)
   const onFail = useSelector((state) => state.article.onFail)
   const createEditStatus = useSelector((state) => state.article.createEditStatus)
+  const usernameState = useSelector((state) => state.user.userInfo)
+  const token = LocalStorageService.getToken()
   const { slug } = useParams()
   const isDisplayModal = useSelector((state) => state.article.displayModal)
   const isUserEdit = useSelector((state) => state.article.isUserEdit)
-  const token = LocalStorageService.getToken()
 
   const controlBlock = (
     <>
@@ -42,12 +42,15 @@ const ArticlePage = () => {
       {isDisplayModal ? <ModalWindow /> : null}
     </>
   )
-  const isControl = !isUserEdit ? controlBlock : null
 
   const getArticle = useCallback(() => {
     dispatch(articleActions.setLoad())
+    dispatch(articleActions.changeEditStatus(false))
+    dispatch(articleActions.setModal(false))
     getArticleService(slug)
-      .then((res) => dispatch(articleActions.getArticle(res)))
+      .then((res) => {
+        dispatch(articleActions.getArticle(res))
+      })
       .catch((err) => dispatch(articleActions.failDownloading(err.message)))
   }, [slug, dispatch])
 
@@ -57,18 +60,15 @@ const ArticlePage = () => {
 
   useEffect(() => {
     if (token && articleContent) {
-      editArticleService(slug, articleContent)
-        .then((res) => {
-          if (res.article) {
-            dispatch(articleActions.changeIsUserEditStatus(true))
-          }
-        })
-        .catch(() => {
-          dispatch(userActions.changeFetchFail(true))
-          dispatch(articleActions.changeIsUserEditStatus(false))
-        })
+      if (articleContent.author && usernameState.username) {
+        if (articleContent.author.username == usernameState.username) {
+          dispatch(articleActions.changeEditStatus(true))
+        } else {
+          dispatch(articleActions.changeEditStatus(false))
+        }
+      }
     }
-  }, [slug, token])
+  }, [slug, token, articleContent, dispatch])
 
   if (onLoad) {
     return (
@@ -91,7 +91,7 @@ const ArticlePage = () => {
   }
 
   if (articleContent) {
-    const { title, body, author, createdAt, description, tagList } = articleContent
+    const { title, author, body, createdAt, description, tagList } = articleContent
     const { image, username } = author
     const avatar = 'https://static.productionready.io/images/smiley-cyrus.jpg'
 
@@ -111,7 +111,7 @@ const ArticlePage = () => {
               <span className={classes.date}>{format(new Date(createdAt), 'MMMM d, y')}</span>
             </div>
             <img src={image === '' ? avatar : image} alt="avatar" className={classes.avatar} width="46" height="46" />
-            {isControl}
+            {isUserEdit ? controlBlock : null}
           </div>
         </div>
         <Markdown className={classes.text} remarkPlugins={[remarkGfm]}>

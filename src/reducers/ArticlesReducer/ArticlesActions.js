@@ -9,7 +9,7 @@ const articleActions = {
 
   changeCreateEditStatus: (status) => ({ type: 'CHANGE_ARTICLE_STATUS', status }),
 
-  changeIsUserEditStatus: (status) => ({ type: 'CHANGE_USER_EDITING_STATUS', status }),
+  changeEditStatus: (status) => ({ type: 'CHANGE_USER_EDITING_STATUS', status }),
 }
 
 export default articleActions

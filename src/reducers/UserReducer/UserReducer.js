@@ -2,7 +2,7 @@ const initState = {
   isRegister: false,
   successReg: false,
   isAuth: false,
-  userInfo: false,
+  userInfo: null,
   isEdit: false,
   isLogin: false,
   isError: false,
