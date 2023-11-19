@@ -1,0 +1,116 @@
+.item {
+  padding: 15px 14px 15px 19px;
+  background-color: #fff;
+  margin-top: 26px;
+  border-radius: 5px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headContainer {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  margin-right: 15px;
+}
+
+.headInfo {
+  display: flex;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.like {
+  margin: 0 13px;
+  display: flex;
+  flex-flow: nowrap;
+  align-items: center;
+}
+
+.likePic {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.likeCount {
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.title {
+  font-size: 20px;
+  line-height: 28px;
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.authorInfo {
+  display: flex;
+  min-width: 140px;
+}
+
+.authorContainer {
+  display: flex;
+  flex-flow: column;
+}
+
+.name {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  max-width: 130px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.date {
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  margin-left: 12px;
+}
+
+.description {
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+@media (max-width: 767px) {
+  .item {
+    padding: 5px;
+  }
+
+  .title {
+    max-width: 90%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .authorInfo {
+    flex-flow: column;
+    align-items: flex-end;
+    min-width: 75px;
+  }
+
+  .authorContainer {
+    align-items: flex-end;
+  }
+
+  .name {
+    max-width: 110px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+}

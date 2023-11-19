@@ -1,0 +1,224 @@
+body {
+  background-color: #ebeef3 !important;
+}
+
+.article {
+  padding: 15px 14px 15px 19px;
+  background-color: #fff;
+  margin: 32px auto;
+  width: 100vh;
+  border-radius: 5px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.indicator-wrapper {
+  margin: 0 auto;
+  width: 250px;
+  text-align: center;
+  display: flex;
+  gap: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headContainer {
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+}
+
+.headInfo {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 28px;
+  color: #1890ff;
+  max-width: 500px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.tags {
+  margin: 6px 0;
+  max-width: 500px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.tagItem {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: transparent;
+  border-radius: 2px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.authorInfo {
+  display: flex;
+  flex-flow: wrap;
+  max-width: 180px;
+}
+
+.authorContainer {
+  display: flex;
+  flex-flow: column;
+}
+
+.name {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  text-align: end;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 120px;
+  max-height: 55px;
+}
+
+.date {
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: end;
+  max-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+  margin-left: 12px;
+}
+
+.description {
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.text {
+  margin-top: 25px;
+  max-width: 96%;
+  max-width: 700px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.controlBlock {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 5px;
+  position: relative;
+}
+
+.controlBtn {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  opacity: 0.9;
+
+  &:hover {
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+.deleteBtn {
+  border: 1px solid #f5222d;
+  color: #f5222d;
+  width: 80px;
+  margin-right: 5px;
+  background: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background: #f5222d;
+  }
+
+  &:focus {
+    outline: none;
+    border: 2px solid #f5222d;
+  }
+}
+
+.editBtn {
+  border: 1px solid #52c41a;
+  color: #52c41a;
+  width: 65px;
+
+  &:hover {
+    background: #52c41a;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid #52c41a;
+  }
+}
+
+@media (max-width: 767px) {
+  .item {
+    padding: 5px;
+  }
+
+  .like {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .title {
+    max-width: 90%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .headContainer {
+    width: 60%;
+  }
+
+  .authorInfo {
+    flex-flow: column;
+    align-items: flex-end;
+  }
+
+  .authorContainer {
+    align-items: flex-end;
+  }
+
+  .name {
+    max-width: 110px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .controlBlock {
+    flex-flow: column;
+    padding: 0;
+  }
+
+  .controlBtn {
+    width: 100%;
+  }
+
+  .editBtn {
+    margin-top: 5px;
+  }
+}

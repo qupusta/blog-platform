@@ -1,0 +1,176 @@
+$active-btn: #52c41a;
+
+.header {
+  background-color: #fff;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 22px;
+  z-index: 1;
+  position: relative;
+
+  & a:hover {
+    color: rgba(0, 0, 0, 0.85);
+  }
+}
+
+.container {
+  width: 1000px;
+  display: flex;
+  margin: 16px auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  text-decoration: none;
+  padding: 10px 10px 10px 0;
+}
+
+.authBtn {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  opacity: 0.95;
+
+  &_active {
+    border: 1px solid $active-btn;
+    border-radius: 5px;
+    color: $active-btn;
+
+    &:hover {
+      color: #51dd0a !important;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:first-child {
+    margin-right: 19px;
+  }
+}
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: flex-end;
+}
+
+.createBtn {
+  border: 1px solid $active-btn;
+  border-radius: 5px;
+  color: $active-btn;
+  padding: 3px 10px;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+  opacity: 0.9;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 1;
+    color: #fff !important;
+    background-color: $active-btn;
+  }
+}
+
+.userInfo {
+  margin: 0 27px;
+  max-width: 320px;
+  display: flex;
+  flex-flow: nowrap;
+  align-items: center;
+  text-decoration: none;
+}
+
+.name {
+  margin-right: 13px;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.img {
+  width: 46px;
+  height: 46px;
+  border-radius: 100%;
+}
+
+.logout {
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.75);
+  border: rgba(0, 0, 0, 0.75) 1px solid;
+  border-radius: 5px;
+  padding: 6px 18px;
+  background-color: #fff;
+  cursor: pointer;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 0 5px;
+  }
+
+  .logo {
+    padding: 0;
+  }
+
+  .authBtn {
+    padding: 10px 5px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  .userInfo {
+    max-width: 90%;
+    overflow: hidden;
+  }
+
+  .createBtn {
+    padding: 18px 0;
+    order: 1;
+    font-size: 13px;
+    line-height: 16px;
+    margin-right: 5px;
+  }
+
+  .logout {
+    padding: 5px;
+    order: 2;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 18px 0;
+  }
+
+  .name {
+    display: none;
+  }
+
+  .userInfo {
+    flex-flow: column;
+    margin: 0 5px;
+  }
+}

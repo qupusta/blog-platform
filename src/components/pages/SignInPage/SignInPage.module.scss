@@ -1,0 +1,54 @@
+$error-color: #f5222d;
+$success-color: #52c41a;
+
+.label {
+  font-size: 14px;
+  line-height: 21px;
+  color: #262626;
+  margin-top: 12px;
+}
+
+.errorLabel {
+  color: $error-color;
+}
+
+$error-color: #f5222d;
+$success-color: #52c41a;
+
+.label {
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+  margin-top: 12px;
+}
+
+.input {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 12px;
+
+  &::placeholder {
+    color: #bfbfbf;
+    font-size: 16px;
+  }
+}
+
+.errorInput {
+  border: $error-color 1px solid;
+  outline: none;
+}
+
+.errorLabel {
+  color: $error-color;
+}
+
+.errorMessage {
+  color: $error-color;
+  margin: 0;
+  padding: 0;
+}
+
+.input + p {
+  color: $error-color;
+  margin: 5px 0;
+}
