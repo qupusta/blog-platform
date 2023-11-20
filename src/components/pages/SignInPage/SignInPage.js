@@ -59,6 +59,7 @@ const SignInPage = () => {
           required: true,
           pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/,
         })}
+        id="email"
         aria-invalid={errors.email ? 'true' : 'false'}
         className={errors.email?.type ? errorInputClass : classes.input}
         placeholder="Email"
@@ -73,6 +74,7 @@ const SignInPage = () => {
         {...register('password', {
           required: true,
         })}
+        id="password"
         aria-invalid={errors.password ? 'true' : 'false'}
         className={errors.password?.type ? errorInputClass : classes.input}
         placeholder="Password"

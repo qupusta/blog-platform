@@ -23,7 +23,11 @@ export const postRequest = async (
     method,
     headers,
     body,
-  }).then((res) => res.json())
+  })
+    .then((res) => res.json())
+    .catch((err) => {
+      throw new Error(err)
+    })
 
   return request
 }

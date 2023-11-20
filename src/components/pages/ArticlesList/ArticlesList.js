@@ -52,6 +52,7 @@ const ArticlesList = () => {
       <ul className={classes.list}>
         {elements}
         <Pagination
+          style={{ margin: '0 auto' }}
           size="small"
           total={articlesCount}
           current={page}

@@ -71,6 +71,7 @@ const SignUpPage = () => {
           minLength: 3,
           maxLength: 20,
         })}
+        id="username"
         aria-invalid={errors.username ? 'true' : 'false'}
         className={errors.username?.type ? errorInputClass : classes.input}
         placeholder="Username"
@@ -87,6 +88,7 @@ const SignUpPage = () => {
           required: true,
           pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/,
         })}
+        id="email"
         aria-invalid={errors.email ? 'true' : 'false'}
         className={errors.email?.type ? errorInputClass : classes.input}
         placeholder="Email"
@@ -103,6 +105,7 @@ const SignUpPage = () => {
           minLength: 8,
           maxLength: 40,
         })}
+        id="password"
         aria-invalid={errors.password ? 'true' : 'false'}
         className={errors.password?.type ? errorInputClass : classes.input}
         placeholder="Password"
@@ -119,6 +122,7 @@ const SignUpPage = () => {
           required: true,
           validate: (value) => value === getValues('password'),
         })}
+        id="repeat"
         aria-invalid={errors.repeat ? 'true' : 'false'}
         className={errors.repeat?.type ? errorInputClass : classes.input}
         placeholder="Password"
