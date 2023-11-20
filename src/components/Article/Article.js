@@ -23,8 +23,8 @@ const Article = ({ title, author, createdAt, description, slug, tagList, favorit
       <div className={classes.header}>
         <div className={classes.headContainer}>
           <div className={classes.headInfo}>
-            <Link to={`/articles/${slug}`} className={classes.title}>
-              {title}
+            <Link to={`/articles/${slug}`} style={{ textDecoration: 'none' }}>
+              <h1 className={classes.title}>{title}</h1>
             </Link>
             <LikeButton favorited={favorited} favoritesCount={favoritesCount} slug={slug} />
           </div>

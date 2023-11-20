@@ -5,12 +5,12 @@ import classes from './Tags.module.scss'
 
 const Tags = ({ tags }) => {
   const tagList = tags.map((tag) => (
-    <button key={nanoid()} className={classes.tagItem} type="button">
+    <li key={nanoid()} className={classes.tagItem}>
       {tag}
-    </button>
+    </li>
   ))
 
-  return <div className={classes.tags}>{tagList}</div>
+  return <ul className={classes.tags}>{tagList}</ul>
 }
 
 export default Tags
