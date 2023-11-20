@@ -7,7 +7,11 @@ export const getRequest = async (
   const request = await fetch(url, {
     method: 'GET',
     headers,
-  }).then((result) => result.json())
+  })
+    .then((res) => result.json())
+    .catch((err) => {
+      throw new Error(err)
+    })
   return request
 }
 
