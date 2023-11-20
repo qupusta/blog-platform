@@ -8,7 +8,7 @@ export const getRequest = async (
     method: 'GET',
     headers,
   })
-    .then((res) => result.json())
+    .then((result) => result.json())
     .catch((err) => {
       throw new Error(err)
     })
