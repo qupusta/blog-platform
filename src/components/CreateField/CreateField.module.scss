@@ -1,0 +1,249 @@
+$error-color: #f5222d;
+$success-color: #52c41a;
+$add-color: #1890ff;
+
+.formContainer {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 22px 106px rgba(0, 0, 0, 0.07), 0px 9.19107px 44.2843px rgba(0, 0, 0, 0.0503198),
+    0px 4.91399px 23.6765px rgba(0, 0, 0, 0.0417275), 0px 2.75474px 13.2728px rgba(0, 0, 0, 0.035),
+    0px 1.46302px 7.04911px rgba(0, 0, 0, 0.0282725), 0px 0.608796px 2.93329px rgba(0, 0, 0, 0.0196802);
+  border-radius: 6px;
+  margin: 32px auto;
+  padding: 32px;
+  width: 90vh;
+}
+
+.header {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  color: #262626;
+  margin-bottom: 9px;
+}
+
+.formBody {
+  display: flex;
+  flex-flow: column;
+}
+
+.btn {
+  margin-top: 21px;
+  background: #1890ff;
+  border-radius: 4px;
+  color: #fff;
+  height: 40px;
+  border: none;
+  margin-bottom: 8px;
+  cursor: pointer;
+  opacity: 0.9;
+  max-width: 319px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.label {
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+  margin-top: 16px;
+}
+
+.textaria {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 12px;
+  height: 168px;
+  resize: none;
+
+  &::placeholder {
+    color: #bfbfbf;
+    font-size: 16px;
+  }
+}
+
+.errorAria {
+  border: 1px solid $error-color;
+  outline: none;
+}
+
+.errorMessage {
+  color: $error-color;
+  margin: 0;
+  padding: 0;
+}
+
+.tagBlock {
+  max-width: 580px;
+  position: relative;
+}
+
+.tagList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.title {
+  margin-top: 21px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+  margin-bottom: 0;
+}
+
+.string {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.hide {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.input {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-right: 17px;
+  width: 300px;
+
+  &::placeholder {
+    color: #bfbfbf;
+    font-size: 16px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.tagBtn {
+  font-size: 16px;
+  line-height: 24px;
+  cursor: pointer;
+  opacity: 0.9;
+  background: #fff;
+  padding: 7px 37px;
+  border-radius: 5px;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.delete {
+  color: $error-color;
+  border: 1px solid $error-color;
+
+  &:hover {
+    background-color: $error-color;
+    color: #fff;
+  }
+}
+
+.add {
+  color: $add-color;
+  border: 1px solid $add-color;
+  max-width: 140px;
+  max-height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: -30px;
+
+  &:hover {
+    background-color: $add-color;
+    color: #fff;
+  }
+}
+
+@media (max-width: 767px) {
+  .formContainer {
+    padding: 20px 5px;
+  }
+
+  .tagList {
+    width: 300px;
+  }
+
+  .string {
+    width: 95%;
+  }
+
+  .input {
+    margin-right: 10px;
+    width: 185px;
+  }
+
+  .add {
+    position: relative;
+    margin-top: 10px;
+    max-width: 200px;
+    padding: 7px 71px;
+  }
+
+  .delete {
+    margin-right: 0;
+    padding: 7px 15px;
+  }
+}
+
+.label {
+  font-size: 14px;
+  line-height: 21px;
+  color: #262626;
+  margin-top: 12px;
+}
+
+.errorLabel {
+  color: $error-color;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 22px;
+  color: #262626;
+  margin-top: 12px;
+}
+
+.input {
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 12px;
+
+  &::placeholder {
+    color: #bfbfbf;
+    font-size: 16px;
+  }
+}
+
+.errorInput {
+  border: $error-color 1px solid;
+  outline: none;
+}
+
+.errorLabel {
+  color: $error-color;
+}
+
+.errorMessage {
+  color: $error-color;
+  margin: 0;
+  padding: 0;
+}
+
+.input+p {
+  color: $error-color;
+  margin: 5px 0;
+}
